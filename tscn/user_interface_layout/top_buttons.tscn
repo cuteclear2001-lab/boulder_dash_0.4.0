@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dmec602x0dwp8"]
+
+[ext_resource type="Script" uid="uid://bnre057lsi4wq" path="res://lua/user_interface_layout/top_buttons/top_buttons_gd.lua" id="1_flmn5"]
+[ext_resource type="Script" uid="uid://chudpnu4npn1x" path="res://lua/user_interface_layout/top_buttons/setting_button/setting_button_gd.lua" id="2_iqmeo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prjnt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqmeo"]
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0, 0)
+
+[node name="TopButtons" type="Control" unique_id=1642049434]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_flmn5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=726073823]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2086489481]
+layout_mode = 2
+
+[node name="SettingButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1401743725]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_prjnt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_prjnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqmeo")
+script = ExtResource("2_iqmeo")

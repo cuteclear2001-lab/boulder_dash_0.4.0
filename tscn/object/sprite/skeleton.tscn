@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ufg88t8isto6"]
+
+[ext_resource type="Texture2D" uid="uid://qtiurp0hxpcv" path="res://png/skeleton.png" id="1_rf8aw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbf2h"]
+atlas = ExtResource("1_rf8aw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhryn"]
+atlas = ExtResource("1_rf8aw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6141"]
+atlas = ExtResource("1_rf8aw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n0be"]
+atlas = ExtResource("1_rf8aw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n02j0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbf2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhryn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6141")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n0be")
+}],
+"loop": true,
+"name": &"heart",
+"speed": 5.0
+}]
+
+[node name="Skeleton" type="AnimatedSprite2D" unique_id=1498277883]
+sprite_frames = SubResource("SpriteFrames_n02j0")
+animation = &"heart"

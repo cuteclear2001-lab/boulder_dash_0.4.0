@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://donqv4enybayr"]
+
+[ext_resource type="Texture2D" uid="uid://batd512ov8ykr" path="res://png/user_interface_frame.png" id="1_xtdk7"]
+[ext_resource type="Texture2D" uid="uid://v0o5anmnj6m3" path="res://png/main_frame.png" id="2_0q7hp"]
+
+[node name="Ground" type="Control" unique_id=422098193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=385268228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1995754127]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UserInterfaceFrame_1" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=225707287]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 2
+texture = ExtResource("1_xtdk7")
+
+[node name="MainFrame" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1965975674]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_0q7hp")
+
+[node name="UserInterfaceFrame_2" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=104972440]
+self_modulate = Color(0.13333334, 0.13333334, 0.13333334, 1)
+layout_mode = 2
+texture = ExtResource("1_xtdk7")

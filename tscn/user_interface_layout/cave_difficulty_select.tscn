@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://b6cs4xwyrstm6"]
+
+[ext_resource type="Script" uid="uid://bt71jno4hamfc" path="res://lua/user_interface_layout/cave_difficulty_select/value_label/value_label_gd.lua" id="1_8u4ig"]
+[ext_resource type="Texture2D" uid="uid://cnyes3n5c6obh" path="res://png/grabber_24.png" id="1_euk42"]
+[ext_resource type="Script" uid="uid://h8rrv3lsh8oy" path="res://lua/user_interface_layout/cave_difficulty_select/cave_difficulty_select_gd.lua" id="1_ewapy"]
+[ext_resource type="Script" uid="uid://p5qqtttc3v7m" path="res://lua/user_interface_layout/cave_difficulty_select/zero_cave/zero_cave_gd.lua" id="3_grtx2"]
+[ext_resource type="Script" uid="uid://cop80ohmm21tn" path="res://lua/user_interface_layout/cave_difficulty_select/cave_h_slider/cave_h_slider_gd.lua" id="4_7bexi"]
+[ext_resource type="Script" uid="uid://t1uv4ka6ikh7" path="res://lua/user_interface_layout/cave_difficulty_select/cave_list/cave_list_gd.lua" id="4_grtx2"]
+[ext_resource type="Script" uid="uid://doq75j1pv4sb8" path="res://lua/user_interface_layout/cave_difficulty_select/difficulty_container/difficulty_container_gd.lua" id="6_b4c0y"]
+[ext_resource type="PackedScene" uid="uid://jit7tlxu2jjh" path="res://tscn/user_interface_layout/cave_difficulty_select/difficulty_container/difficulty_button_list.tscn" id="6_s2csy"]
+[ext_resource type="PackedScene" uid="uid://c84yuy1tpabgm" path="res://tscn/user_interface_layout/cave_difficulty_select/difficulty_container/difficulty_button.tscn" id="7_b4c0y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pc0xu"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euk42"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_euk42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3uh57"]
+
+[node name="CaveDifficultySelect" type="Control" unique_id=1075743306]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ewapy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=91072186]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1831959699]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=665725917]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1684842482]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16862746, 0.49803922, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pc0xu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_euk42")
+text = "TR_CAVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2028347272]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pc0xu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_euk42")
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_8u4ig")
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=72640964]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer_1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=824958058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="ZeroCave" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Control/HBoxContainer_1" unique_id=907688319]
+self_modulate = Color(0.16862746, 0.49803922, 1, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_euk42")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3uh57")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3uh57")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3uh57")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3uh57")
+icon = ExtResource("1_euk42")
+script = ExtResource("3_grtx2")
+
+[node name="CaveList" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Control/HBoxContainer_1" unique_id=171401115]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("4_grtx2")
+
+[node name="HBoxContainer_2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Control" unique_id=1745670213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Control_1" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Control/HBoxContainer_2" unique_id=378452829]
+custom_minimum_size = Vector2(4, 8)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CaveHSlider" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer/Control/HBoxContainer_2" unique_id=193716276]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("4_7bexi")
+
+[node name="Control_2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/Control/HBoxContainer_2" unique_id=974246662]
+custom_minimum_size = Vector2(4, 8)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=560273905]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=324661414]
+layout_mode = 2
+
+[node name="DifficultyContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=1442270348]
+layout_mode = 2
+script = ExtResource("6_b4c0y")
+
+[node name="DifficultyButtonList" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/DifficultyContainer" unique_id=23763965 instance=ExtResource("6_s2csy")]
+layout_mode = 2
+
+[node name="DifficultyButton" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/DifficultyContainer/DifficultyButtonList" unique_id=1788126637 instance=ExtResource("7_b4c0y")]
+layout_mode = 2

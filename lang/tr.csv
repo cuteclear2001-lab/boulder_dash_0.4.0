@@ -1,0 +1,22 @@
+id,zh_TW,en
+TR_LANGUAGE,Language,Language
+TR_GAME_SETTINGS,遊戲設定,Game
+TR_INPUT_SETTINGS,快捷設定,Controls
+TR_RESET_TO_DEFAULT,重設為預設值,Reset to Default
+TR_PRESS_KEY,請按鍵...,Press key ...
+TR_CUSTOM_UP,上,Up
+TR_CUSTOM_DOWN,下,Down
+TR_CUSTOM_LEFT,左,Left
+TR_CUSTOM_RIGHT,右,Right
+TR_CUSTOM_PAUSE,暫停,Pause
+TR_GAME_MENU,遊戲選單,Game Menu
+TR_NEW_GAME,新遊戲,New Game
+TR_RETURN_TO_GAME,回到遊戲,Return to Game
+TR_PAUSE,暫停...,Pause...
+TR_LEVEL,關卡,Level
+TR_RESET_CAVE_TO_DEFAULT,關卡重設為預設,Reset Cave to Default
+TR_CAVE_DIFFICULTY_SELECT,關卡選擇,Cave Difficulty Select
+TR_CAVE,Cave,Cave
+TR_SOUND_EFFECT,音效,Sound Effect
+TR_COUNT_SETTING,倒數秒數,Count Setting
+TR_CUSTOM_RESTART_GAME,重新開始遊戲,Restart Game

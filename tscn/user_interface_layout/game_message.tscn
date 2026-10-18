@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dp7o37ikej7k4"]
+
+[ext_resource type="Script" uid="uid://d1cm25gdkww2c" path="res://lua/user_interface_layout/game_message/game_state_label/game_state_label_gd.lua" id="1_a0p85"]
+[ext_resource type="Script" uid="uid://4nspqxw2t6v" path="res://lua/user_interface_layout/game_message/countdown_label/countdown_label_gd.lua" id="2_bwd25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rvehq"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[node name="GameMessage" type="Control" unique_id=1084285265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=63289144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1182000495]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="GameStateLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=301589395]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8039216, 0.36078432, 0.36078432, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rvehq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvehq")
+text = "Pause"
+vertical_alignment = 1
+script = ExtResource("1_a0p85")
+
+[node name="CountLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=102503152]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8039216, 0.36078432, 0.36078432, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rvehq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rvehq")
+text = "AAA	"
+vertical_alignment = 1
+script = ExtResource("2_bwd25")

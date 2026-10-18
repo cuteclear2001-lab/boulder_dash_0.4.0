@@ -1,0 +1,13 @@
+{
+    "workspace": {
+        "library": [
+            "addons/lua-gdextension/lua_api_definitions"
+        ],
+        "ignoreDir": [
+            "addons"
+        ]
+    },
+    "diagnostics": {
+        "ignoredFiles": "Disable"
+    }
+}

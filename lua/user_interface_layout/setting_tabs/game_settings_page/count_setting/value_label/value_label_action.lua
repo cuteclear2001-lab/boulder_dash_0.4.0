@@ -1,0 +1,32 @@
+--res://lua/user_interface_layout/setting_tabs/game_settings_page/count_setting/value_label/value_label_action.lua
+local Data = require("lua.user_interface_layout.setting_tabs.game_settings_page.count_setting.value_label.value_label_data")
+local Config = require("lua.feature.action.config")
+local User_Setting = require("lua.feature.data.user_setting")
+
+---@class Action.CountSetting.ValueLabel
+local Value_Label = {
+}
+
+---@param label Label
+function Value_Label:init(label)
+    Data.label = label
+    self:setup()
+end
+
+function Value_Label:setup()
+    local temp = Config:load()[User_Setting.SETTINGS][User_Setting.COUNT_SETTING]
+    local value = tonumber(temp) or 5
+    self:update(value)
+end
+
+---@param value integer
+function Value_Label:update(value)
+    ---@type Label
+    local label = Data.label
+    if not is_instance_valid(label) then
+        return
+    end
+    label.text = string.format("%d", value)
+end
+
+return Value_Label

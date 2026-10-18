@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dhjncetcxkxn6"]
+
+[ext_resource type="Script" uid="uid://o1orjrl4l0h8" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/language_setting/language_option_gd.lua" id="1_ho1xn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_likjn"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[node name="LanguageSetting" type="HBoxContainer" unique_id=523166390]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=2020276640]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_likjn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_likjn")
+text = "TR_LANGUAGE"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1565230463]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=564842280]
+layout_mode = 2
+script = ExtResource("1_ho1xn")

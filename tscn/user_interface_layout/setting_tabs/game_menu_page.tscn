@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://df2fatwribb45"]
+
+[ext_resource type="Script" uid="uid://8blj3xoupcma" path="res://lua/user_interface_layout/setting_tabs/game_menu_page/return_to_game_button/return_to_game_button_gd.lua" id="1_0scyf"]
+[ext_resource type="Script" uid="uid://bl35ux5xl48p4" path="res://lua/user_interface_layout/setting_tabs/game_menu_page/new_game_button/new_game_button_gd.lua" id="1_jdo1n"]
+[ext_resource type="Script" uid="uid://dsm7p76ntm352" path="res://lua/user_interface_layout/setting_tabs/game_menu_page/cave_difficulty_select_button/cave_difficulty_select_button_gd.lua" id="1_tlk8x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fecmc"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GameMenuPage" type="Control" unique_id=181547883]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=414512689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1679939754]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1921884221]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fecmc")
+text = "TR_NEW_GAME"
+script = ExtResource("1_jdo1n")
+
+[node name="ReturnToGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1009092163]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fecmc")
+text = "TR_RETURN_TO_GAME"
+script = ExtResource("1_0scyf")
+
+[node name="CaveDifficultySelectButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=623554268]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fecmc")
+text = "TR_CAVE_DIFFICULTY_SELECT"
+script = ExtResource("1_tlk8x")

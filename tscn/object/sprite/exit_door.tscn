@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dl74vqalft8ay"]
+
+[ext_resource type="Texture2D" uid="uid://dvapf2wasuu15" path="res://png/exit_door.png" id="1_47fvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7fwo"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnslk"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7odmm"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxpg6"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh7ce"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtrnk"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvidw"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsaph"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsxk4"]
+atlas = ExtResource("1_47fvj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7vkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7fwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnslk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7odmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxpg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh7ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtrnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvidw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsaph")
+}],
+"loop": true,
+"name": &"heart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsxk4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Exit_Door" type="AnimatedSprite2D" unique_id=2045613747]
+sprite_frames = SubResource("SpriteFrames_p7vkl")
+animation = &"heart"
+frame_progress = 0.60875934

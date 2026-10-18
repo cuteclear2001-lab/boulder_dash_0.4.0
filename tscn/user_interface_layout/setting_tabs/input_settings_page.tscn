@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://pb6hxxjphpn6"]
+
+[ext_resource type="Script" uid="uid://b1kpj1m2p1orn" path="res://lua/user_interface_layout/setting_tabs/input_settings_page/input_list/input_list_gd.lua" id="1_f54f2"]
+[ext_resource type="PackedScene" uid="uid://bitoih7gdf6eq" path="res://tscn/user_interface_layout/setting_tabs/input_settings_page/input_cell.tscn" id="1_khdns"]
+[ext_resource type="Script" uid="uid://w6cscw07uef8" path="res://lua/user_interface_layout/setting_tabs/input_settings_page/reset_button/reset_button_gd.lua" id="3_jxlio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khdns"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="InputSettingsPage" type="Control" unique_id=888466935]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2030390095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1885550938]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1606151889]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InputList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=166365801]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_f54f2")
+
+[node name="InputCell" parent="MarginContainer/VBoxContainer/ScrollContainer/InputList" unique_id=1592768467 instance=ExtResource("1_khdns")]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1905307020]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_khdns")
+text = "TR_RESET_TO_DEFAULT"
+script = ExtResource("3_jxlio")

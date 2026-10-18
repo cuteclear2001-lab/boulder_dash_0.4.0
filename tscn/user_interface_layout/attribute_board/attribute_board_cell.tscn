@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dhuw0677yle8t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg7r3"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[node name="AttributeBoardCell" type="VBoxContainer" unique_id=454110086]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="NameLabel" type="Label" parent="." unique_id=2059041855]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.16862746, 0.49803922, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rg7r3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rg7r3")
+text = "AAA	"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=245717437]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ValueLabel" type="Label" parent="." unique_id=661256278]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rg7r3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rg7r3")
+text = "BBB"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1489585307]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2

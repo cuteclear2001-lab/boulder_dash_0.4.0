@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ctjtldiioday3"]
+
+[ext_resource type="Script" uid="uid://b4ilj8muu45eg" path="res://lua/user_interface_layout/setting_tabs/setting_tabs_gd.lua" id="1_6cweb"]
+[ext_resource type="PackedScene" uid="uid://pb6hxxjphpn6" path="res://tscn/user_interface_layout/setting_tabs/input_settings_page.tscn" id="1_nrs4o"]
+[ext_resource type="PackedScene" uid="uid://h025tk1lxx4l" path="res://tscn/user_interface_layout/setting_tabs/game_settings_page.tscn" id="2_6uqc3"]
+[ext_resource type="PackedScene" uid="uid://df2fatwribb45" path="res://tscn/user_interface_layout/setting_tabs/game_menu_page.tscn" id="2_ud4r8"]
+
+[node name="SettingTabs" type="Control" unique_id=1694525271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6cweb")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1268820428]
+custom_minimum_size = Vector2(720, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -180.0
+offset_right = 360.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_colors/font_hovered_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+current_tab = 0
+
+[node name="TR_GAME_MENU" type="TabBar" parent="TabContainer" unique_id=56044849]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GameMenuPage" parent="TabContainer/TR_GAME_MENU" unique_id=181547883 instance=ExtResource("2_ud4r8")]
+layout_mode = 1
+
+[node name="TR_GAME_SETTINGS" type="TabBar" parent="TabContainer" unique_id=2041279346]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GameSettingsPage" parent="TabContainer/TR_GAME_SETTINGS" unique_id=870606127 instance=ExtResource("2_6uqc3")]
+layout_mode = 1
+
+[node name="TR_INPUT_SETTINGS" type="TabBar" parent="TabContainer" unique_id=245103860]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="InputSettingsPage" parent="TabContainer/TR_INPUT_SETTINGS" unique_id=888466935 instance=ExtResource("1_nrs4o")]
+layout_mode = 1

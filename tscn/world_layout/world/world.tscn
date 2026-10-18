@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmpy5ogtlgpjx"]
+
+[ext_resource type="Script" uid="uid://cuqg1kormlvev" path="res://lua/world_layout/world_gd.lua" id="1_o730k"]
+
+[node name="World" type="Node2D" unique_id=258062595]
+script = ExtResource("1_o730k")

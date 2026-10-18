@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://h025tk1lxx4l"]
+
+[ext_resource type="PackedScene" uid="uid://dhjncetcxkxn6" path="res://tscn/user_interface_layout/setting_tabs/game_settings_page/language_setting.tscn" id="1_7iryq"]
+[ext_resource type="PackedScene" uid="uid://bjeyq4555wq74" path="res://tscn/user_interface_layout/setting_tabs/game_settings_page/sound_effect.tscn" id="2_0haji"]
+[ext_resource type="PackedScene" uid="uid://cw8dup2pyk8ov" path="res://tscn/user_interface_layout/setting_tabs/game_settings_page/count_setting.tscn" id="3_bbmhi"]
+[ext_resource type="Script" uid="uid://dgbirnntvdey5" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/reset_button/reset_button_gd.lua" id="3_hwbya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlk4y"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GameSettingsPage" type="Control" unique_id=870606127]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1361734122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1066719214]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1841260699]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1306009706]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LanguageSetting" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=523166390 instance=ExtResource("1_7iryq")]
+layout_mode = 2
+
+[node name="SoundEffect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=719683623 instance=ExtResource("2_0haji")]
+layout_mode = 2
+
+[node name="CountSetting" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1803374072 instance=ExtResource("3_bbmhi")]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=549073230]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mlk4y")
+text = "TR_RESET_TO_DEFAULT"
+script = ExtResource("3_hwbya")

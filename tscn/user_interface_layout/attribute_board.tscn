@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cel5cwm3b6clt"]
+
+[ext_resource type="PackedScene" uid="uid://dhuw0677yle8t" path="res://tscn/user_interface_layout/attribute_board/attribute_board_cell.tscn" id="1_a1y8p"]
+[ext_resource type="Script" uid="uid://dujccjvfr1or0" path="res://lua/user_interface_layout/attribute_board/attribute_board_gd.lua" id="1_fag8t"]
+
+[node name="AttributeBoard" type="Control" unique_id=1294303020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fag8t")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=845709841]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Control_1" type="Control" parent="MarginContainer" unique_id=156421203]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control_1" unique_id=604137677]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 128.0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control_1/MarginContainer" unique_id=192598665]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Score" parent="MarginContainer/Control_1/MarginContainer/VBoxContainer" unique_id=454110086 instance=ExtResource("1_a1y8p")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="GameLevel" parent="MarginContainer/Control_1/MarginContainer/VBoxContainer" unique_id=265296721 instance=ExtResource("1_a1y8p")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Control_2" type="Control" parent="MarginContainer" unique_id=1210344048]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control_2" unique_id=1731686192]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control_2/MarginContainer" unique_id=1802190853]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="DiamondsRequired" parent="MarginContainer/Control_2/MarginContainer/VBoxContainer" unique_id=2001478229 instance=ExtResource("1_a1y8p")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="RemainingTime" parent="MarginContainer/Control_2/MarginContainer/VBoxContainer" unique_id=303068456 instance=ExtResource("1_a1y8p")]
+layout_mode = 2
+size_flags_horizontal = 0

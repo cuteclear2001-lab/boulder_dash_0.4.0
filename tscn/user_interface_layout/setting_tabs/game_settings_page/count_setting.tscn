@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cw8dup2pyk8ov"]
+
+[ext_resource type="Script" uid="uid://du0nw4qkyhkjx" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/count_setting/value_label/value_label_gd.lua" id="1_8ixpd"]
+[ext_resource type="Script" uid="uid://c0y1iypdvnkop" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/count_setting/main_h_slider/main_h_slider_gd.lua" id="2_7smkw"]
+[ext_resource type="Script" uid="uid://cukfii3tjusur" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/count_setting/zero_button/zero_button_gd.lua" id="3_61s7a"]
+[ext_resource type="Script" uid="uid://ct1x5vmo715db" path="res://lua/user_interface_layout/setting_tabs/game_settings_page/count_setting/count_setting_list/count_setting_list_gd.lua" id="4_qouci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_likjn"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsrl3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jtxh"]
+
+[node name="CountSetting" type="HBoxContainer" unique_id=523166390]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameLabel" type="Label" parent="." unique_id=2020276640]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_likjn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_likjn")
+text = "TR_COUNT_SETTING"
+vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="." unique_id=1575954520]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_likjn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_likjn")
+text = "5"
+vertical_alignment = 1
+script = ExtResource("1_8ixpd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2027701058]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainHSlider" type="HSlider" parent="VBoxContainer" unique_id=972986692]
+layout_mode = 2
+max_value = 5.0
+script = ExtResource("2_7smkw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1558853700]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Control_1" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=1889298588]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="ZeroButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1681198443]
+custom_minimum_size = Vector2(8, 16)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsrl3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6jtxh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6jtxh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6jtxh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6jtxh")
+script = ExtResource("3_61s7a")
+
+[node name="CountSettingList" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=2118546946]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("4_qouci")
+
+[node name="Control_2" type="Control" parent="VBoxContainer/HBoxContainer" unique_id=977011941]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2

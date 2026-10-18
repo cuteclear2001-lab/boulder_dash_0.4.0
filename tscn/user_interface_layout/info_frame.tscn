@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bt1ohk3db62s7"]
+
+[ext_resource type="Script" uid="uid://c66qgvf3hjmai" path="res://lua/user_interface_layout/info_frame/info_frame_gd.lua" id="1_fnmmu"]
+[ext_resource type="Script" uid="uid://xn2pht8146to" path="res://lua/user_interface_layout/info_frame/frame_per_second/frame_per_second_gd.lua" id="1_xynyu"]
+[ext_resource type="Script" uid="uid://bal28xrwe0to8" path="res://lua/user_interface_layout/info_frame/memory_label/memory_label_gd.lua" id="3_mvhq6"]
+[ext_resource type="Script" uid="uid://csmeg0cw4fsrw" path="res://lua/user_interface_layout/info_frame/performance_label/performance_label_gd.lua" id="4_mvhq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ak1fo"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xynyu"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 8.0
+
+[node name="InfoFrame" type="Control" unique_id=1770119137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fnmmu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=383720042]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1042767759]
+layout_mode = 2
+
+[node name="FramePerSecond" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1523436129]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak1fo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xynyu")
+text = "?	"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_xynyu")
+
+[node name="MemoryLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1000714836]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak1fo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xynyu")
+text = "?	"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_mvhq6")
+
+[node name="PerformanceLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1893267341]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99215686, 0.78039217, 0.27058825, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak1fo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xynyu")
+text = "?	"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_mvhq6")
