@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="boulder_dash_0.3.0"
+config/name="boulder_dash_0.4.0"
 run/main_scene="uid://dvgn5q83i61v6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
