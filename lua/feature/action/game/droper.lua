@@ -76,13 +76,15 @@ end
 checkHorizontal = function(position, move, collision_type)
     local offset = Direction[move]
     local target_position = {position[1] + offset[1], position[2] + offset[2]}
-    local collision_flag, _, _, target_cell = Collision:check(target_position, Enum_Data.COLLISION_TYPE.DIAMOND)
+    local collision_flag, _, _, target_cell = Collision:check(target_position, collision_type)
     if not collision_flag then
         offset = Direction[Enum_Data.MOVE.DOWN]
         target_position = {target_position[1] + offset[1], target_position[2] + offset[2]}
         collision_flag, _, _, _ = Collision:check(target_position, collision_type)
         if not collision_flag then
+            -- print(string.format("%s, %d", "checkHorizontal", collision_type))
             return target_cell
+        else
         end
     end
     return nil
@@ -118,12 +120,12 @@ checkData = function(module_resource)
                         else
                         end
                         collision_flag, block, _, target_cell = Collision:check(target_position, collision_type)
-                        if Enum_Data.BLOCK.BOULDER == block then
-                            collision_type = Enum_Data.COLLISION_TYPE.BOULDER
-                        elseif Enum_Data.BLOCK.DIAMOND == block then
-                            collision_type = Enum_Data.COLLISION_TYPE.DIAMOND
-                        else
-                        end
+                        -- if Enum_Data.BLOCK.BOULDER == block then
+                        --     collision_type = Enum_Data.COLLISION_TYPE.BOULDER
+                        -- elseif Enum_Data.BLOCK.DIAMOND == block then
+                        --     collision_type = Enum_Data.COLLISION_TYPE.DIAMOND
+                        -- else
+                        -- end
                         if not collision_flag then
                             if target_cell then
                                 tryFallTween(sprite2d, sprite_data, target_cell, Enum_Data.MOVE.DOWN, collision_type)

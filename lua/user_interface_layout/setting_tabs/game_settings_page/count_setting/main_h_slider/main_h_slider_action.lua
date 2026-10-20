@@ -36,7 +36,7 @@ end
 function Main_H_Slider:onChanged(value)
     Config:saveSetting(User_Setting.SETTINGS, User_Setting.COUNT_SETTING, tostring(value))
     Value_Label_Action:update(value)
---    print(string.format("%d", value))
+    -- print(string.format("Main_H_Slider:onChanged %d", value))
 end
 
 return Main_H_Slider

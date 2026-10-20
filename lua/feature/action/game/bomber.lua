@@ -194,33 +194,61 @@ hasQueryBomb = function(tile_cell)
     local bomb_sprite = nil
     local can_bomb_sprite = Data[Enum_Data.BOMBER_TYPE.CAN_BOMB_SPRITE]
     for k, _ in pairs(tile_cell_list) do
-        if bomb_sprite then
-            break
-        else
-        end
         bomb_sprite_block, _ = Calculator:queryBlockType(k)
-        for _, bomb_sprite_k in ipairs(can_bomb_sprite) do
-            if bomb_sprite_k == bomb_sprite_block then
+        if bomb_sprite_block then
+            if Calculator:hasInTable(can_bomb_sprite, bomb_sprite_block) > 0 then
                 bomb_sprite = k
                 break
             else
             end
+        else
         end
     end
+    -- for k, _ in pairs(tile_cell_list) do
+    --     if bomb_sprite then
+    --         break
+    --     else
+    --     end
+    --     bomb_sprite_block, _ = Calculator:queryBlockType(k)
+    --     for _, bomb_sprite_k in ipairs(can_bomb_sprite) do
+    --         if bomb_sprite_k == bomb_sprite_block then
+    --             bomb_sprite = k
+    --             break
+    --         else
+    --         end
+    --     end
+    -- end
     if not bomb_sprite then
         return nil, nil, nil, nil
     else
     end
     local boulder_block = nil
     local boulder = nil
+    local bombed_sprite = nil
+    if bomb_sprite_block == Enum_Data.BLOCK.ROCKFORD then
+        bombed_sprite = Data[Enum_Data.BOMBER_TYPE.ROCKFORD_BOMBED_SPRITE]
+    else
+        bombed_sprite = Data[Enum_Data.BOMBER_TYPE.BOULDER_BOMBED_SPRITE]
+    end
     for k, _ in pairs(tile_cell_list) do
         boulder_block, _ = Calculator:queryBlockType(k)
-        if Enum_Data.BLOCK.BOULDER == boulder_block or Enum_Data.BLOCK.DIAMOND == boulder_block or Enum_Data.BLOCK.ROCKFORD == boulder_block then
-            boulder = k
-            break
+        if boulder_block then
+            if Calculator:hasInTable(bombed_sprite, boulder_block) > 0 then
+                boulder = k
+                break
+            else
+            end
         else
         end
     end
+    -- for k, _ in pairs(tile_cell_list) do
+    --     boulder_block, _ = Calculator:queryBlockType(k)
+    --     if Enum_Data.BLOCK.BOULDER == boulder_block or Enum_Data.BLOCK.DIAMOND == boulder_block or Enum_Data.BLOCK.ROCKFORD == boulder_block then
+    --         boulder = k
+    --         break
+    --     else
+    --     end
+    -- end
     if not boulder then
         return nil, nil, nil, nil
     else
@@ -229,8 +257,9 @@ hasQueryBomb = function(tile_cell)
         local boulder_data = tile_cell_list[boulder]
         if not boulder_data[Enum_Data.SPRITE_DATA.MOVED_FLAG] then
             if boulder ~= bomb_sprite then
-               return boulder_block, boulder, bomb_sprite_block, bomb_sprite
+                return boulder_block, boulder, bomb_sprite_block, bomb_sprite
             else
+                -- print(string.format("%s, [%d, %d]", "bbb", boulder_block, bomb_sprite_block))
             end
         else
         end

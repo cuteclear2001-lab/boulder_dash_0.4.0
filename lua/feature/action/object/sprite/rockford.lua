@@ -6,6 +6,7 @@ local Direction = require("lua.feature.data.direction")
 local Data = require("lua.feature.data.object.sprite.rockford")
 local Game_Data = require("lua.feature.data.game.game")
 local Dirt = require("lua.feature.action.object.sprite.dirt")
+local Ice_Dirt = require("lua.feature.action.object.sprite.ice_dirt")
 local Diamond = require("lua.feature.action.object.sprite.diamond")
 local Exit_Door = require("lua.feature.action.object.sprite.exit_door")
 --local World_Data = require("lua.world_layout.world_data")
@@ -148,10 +149,16 @@ tryTween = function(sprite, sprite_data, tile_cell, duration, open_door_flag)
 end
 
 ---@param current_row table
+---@param block BLOCK
 ---@param sprite Sprite2D
-tryDigDirt = function(current_row, sprite)
+tryDigDirt = function(current_row, block, sprite)
 --    print(string.format("%s, %s, %s", tostring(current_row), tostring(sprite), tostring(current_row[sprite])))
-    Dirt:freeObjectOfKey(sprite)
+    if Enum_Data.BLOCK.DIRT == block then
+        Dirt:freeObjectOfKey(sprite)
+    elseif Enum_Data.BLOCK.ICE_DIRT == block then
+        Ice_Dirt:freeObjectOfKey(sprite)
+    else
+    end
     current_row[sprite] = nil
 end
 
@@ -181,6 +188,9 @@ end
 ---@param direction MOVE
 tryMove = function(direction)
     if Game_Data[Enum_Data.CAVE_TYPE.PAUSE_FLAG] then
+        return
+    end
+    if Game_Data[Enum_Data.CAVE_TYPE.CURRENT_STATE] ~= Enum_Data.GAME_STATE.GAMING then
         return
     end
     local sprite_data = Data[Enum_Data.SPRITE_TYPE.SELF_DATA]
@@ -224,8 +234,8 @@ tryMove = function(direction)
             Sound_Player:playHasTile(block)
             ---@cast sprite Sprite2D
             if tile_cell then
-                if Enum_Data.BLOCK.DIRT == block then
-                    tryDigDirt(tile_cell[Enum_Data.TILE_CELL_TYPE.LIST], sprite)
+                if Enum_Data.BLOCK.DIRT == block or Enum_Data.BLOCK.ICE_DIRT == block then
+                    tryDigDirt(tile_cell[Enum_Data.TILE_CELL_TYPE.LIST], block, sprite)
                 elseif Enum_Data.BLOCK.DIAMOND == block then
                     tryTouchDiamond(tile_cell[Enum_Data.TILE_CELL_TYPE.LIST], sprite)
                 elseif Enum_Data.BLOCK.EXIT_DOOR == block then

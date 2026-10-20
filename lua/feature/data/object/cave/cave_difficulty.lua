@@ -8,11 +8,11 @@ local Cave_Difficulty = {
     data_file_string = "lua/feature/data/object/cave/cave_%02d/difficulty_%03d",
     data = {
         [0] = 5,
-        [1] = 7,
-        [2] = 6,
-        [3] = 7,
-        [4] = 12,
-        [5] = 22,
+        [1] = 5,
+        -- [2] = 6,
+        -- [3] = 7,
+        -- [4] = 12,
+        -- [5] = 22,
     },
     pause_game = nil,
 }

@@ -127,9 +127,9 @@ Enum_Data.BLOCK = {
     ROCKFORD = 9,
     EXIT_DOOR = 10,
     ICE_EMPTY = 11,
-    ICE_BRICK_WALL = 12,
-    BOMB = 13,
-
+    ICE_DIRT = 12,
+    ICE_BRICK_WALL = 13,
+    BOMB = 14,
 }
 
 ---@enum RECT
@@ -142,8 +142,9 @@ Enum_Data.RECT = {
     TIME = 6,
     BOULDER = 7,
     DIAMOND = 8,
-    ICE_EMPTY = 9,
+    ICE_DIRT = 9,
     ICE_BRICK_WALL = 10,
+    ICE_EMPTY = 11,
 }
 
 ---@enum SOUND
@@ -249,14 +250,17 @@ Enum_Data.COLLISION_TYPE = {
     BOULDER = 2,
     DIAMOND = 3,
     CREATURE = 4,
+    PUSH_BOULDER = 5,
 }
 
 ---@enum BOMBER_TYPE
 Enum_Data.BOMBER_TYPE = {
     CAN_BOMB_SPRITE = 1,
-    BOMB_SQUARE_ADDED_LENGTH = 2,
-    UNBOMB_BLOCK = 3,
-    GAME_OVER_ACTION = 4,
+    BOULDER_BOMBED_SPRITE = 2,
+    ROCKFORD_BOMBED_SPRITE = 3,
+    BOMB_SQUARE_ADDED_LENGTH = 4,
+    UNBOMB_BLOCK = 5,
+    GAME_OVER_ACTION = 6,
 }
 
 ---@enum CREATURE_MOVER_TYPE

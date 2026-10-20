@@ -50,6 +50,7 @@ local Menu_State = {
         [Enum_Data.MENU_STATE.SETTING_TABS_TOGGLE]
             = {
                 [Enum_Data.MENU.SETTING_TABS] = 0,
+                [Enum_Data.MENU.CAVE_DIFFICULTY_SELECT] = false,
             },
         [Enum_Data.MENU_STATE.CAVE_DIFFICULTY_SELECTED_TOGGLE]
             = {

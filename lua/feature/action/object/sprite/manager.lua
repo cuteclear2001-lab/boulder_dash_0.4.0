@@ -7,6 +7,7 @@ local World_Data = require("lua.world_layout.world_data")
 local Rockford = require("lua.feature.action.object.sprite.rockford")
 local Exit_Door = require("lua.feature.action.object.sprite.exit_door")
 local Dirt = require("lua.feature.action.object.sprite.dirt")
+local Ice_Dirt = require("lua.feature.action.object.sprite.ice_dirt")
 local Steel_Wall = require("lua.feature.action.object.sprite.steel_wall")
 local Brick_Wall = require("lua.feature.action.object.sprite.brick_wall")
 local Ice_Brick_Wall = require("lua.feature.action.object.sprite.ice_brick_wall")
@@ -25,6 +26,7 @@ function Manager:init()
     sprite_moudle[Enum_Data.BLOCK.ROCKFORD] = Rockford
     sprite_moudle[Enum_Data.BLOCK.EXIT_DOOR] = Exit_Door
     sprite_moudle[Enum_Data.BLOCK.DIRT] = Dirt
+    sprite_moudle[Enum_Data.BLOCK.ICE_DIRT] = Ice_Dirt
     sprite_moudle[Enum_Data.BLOCK.STEEL_WALL] = Steel_Wall
     sprite_moudle[Enum_Data.BLOCK.BRICK_WALL] = Brick_Wall
     sprite_moudle[Enum_Data.BLOCK.ICE_BRICK_WALL] = Ice_Brick_Wall

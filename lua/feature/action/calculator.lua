@@ -7,6 +7,20 @@ local Sprite_Manager_Data = require("lua.feature.data.object.sprite.manager")
 local Calculator = {
 }
 
+---@param table table<BLOCK>
+---@param block BLOCK
+---@return integer
+function Calculator:hasInTable(table, block)
+    local index = 0
+    for k, v in ipairs(table) do
+        if block == v then
+            return k
+        else
+        end
+    end
+    return index
+end
+
 ---@param block BLOCK
 ---@return integer
 function Calculator:queryBlockCount(block)

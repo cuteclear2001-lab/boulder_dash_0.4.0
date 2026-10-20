@@ -60,7 +60,7 @@ function Pusher:tryPush(block, current_position, direction, sprite, tile_cell)
             offset = Direction[direction]
             target_position = {current_position[1] + offset[1], current_position[2] + offset[2]}
             local target_tile_cell = nil
-            collision_flag, _, _, target_tile_cell = Collision:check(target_position, Enum_Data.COLLISION_TYPE.BOULDER)
+            collision_flag, _, _, target_tile_cell = Collision:check(target_position, Enum_Data.COLLISION_TYPE.PUSH_BOULDER)
             if not collision_flag then
                 if tile_cell then
                     tryHorizontalTween(sprite, sprite_data, target_tile_cell)

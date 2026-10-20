@@ -8,6 +8,7 @@ local Sound_Player = {
         = {
             [Enum_Data.SOUND.SPRITE_STREAM_DATA] = {
                 [Enum_Data.BLOCK.DIRT] = "res://sound/dug_dirt.wav",
+                [Enum_Data.BLOCK.ICE_DIRT] = "res://sound/dug_dirt.wav",
                 [Enum_Data.BLOCK.DIAMOND] = "res://sound/pickup_diamond.wav",
             },
             [Enum_Data.SOUND.SPRITE_FALL_STREAM_DATA] = {

@@ -10,6 +10,7 @@ local Rect = {
     block_to_rect = {
         [Enum_Data.BLOCK.EMPTY] = Enum_Data.RECT.EMPTY,
         [Enum_Data.BLOCK.DIRT] = Enum_Data.RECT.DIRT,
+        [Enum_Data.BLOCK.ICE_DIRT] = Enum_Data.RECT.ICE_DIRT,
         [Enum_Data.BLOCK.BRICK_WALL] = Enum_Data.RECT.BRICK_WALL,
         [Enum_Data.BLOCK.STEEL_WALL] = Enum_Data.RECT.STEEL_WALL,
         [Enum_Data.BLOCK.ICE_EMPTY] = Enum_Data.RECT.ICE_EMPTY,
@@ -26,6 +27,7 @@ local Rect = {
         [Enum_Data.RECT.DIAMOND] = Rect2(Main_Data.BLOCK_SIZE * 7, 0, Main_Data.BLOCK_SIZE, Main_Data.BLOCK_SIZE),
         [Enum_Data.RECT.ICE_EMPTY] = Rect2(Main_Data.BLOCK_SIZE * 8, 0, Main_Data.BLOCK_SIZE, Main_Data.BLOCK_SIZE),
         [Enum_Data.RECT.ICE_BRICK_WALL] = Rect2(Main_Data.BLOCK_SIZE * 9, 0, Main_Data.BLOCK_SIZE, Main_Data.BLOCK_SIZE),
+        [Enum_Data.RECT.ICE_DIRT] = Rect2(Main_Data.BLOCK_SIZE * 10, 0, Main_Data.BLOCK_SIZE, Main_Data.BLOCK_SIZE),
     },
 }
 
